@@ -128,7 +128,7 @@ void nvs_config_set_u64(const char * key, const uint64_t value)
 
     err = nvs_set_u64(handle, key, value);
     if (err != ESP_OK) {
-        ESP_LOGW(TAG, "Could not write nvs key: %s, value: %llu", key, value);
+        ESP_LOGW(TAG, "Could not write nvs key: %s, value: %lu", key, value);
     }
     nvs_close(handle);
 }
