@@ -1,4 +1,18 @@
-idf_component_register(SRCS "main.c"
-                       INCLUDE_DIRS "."
-                       PRIV_REQUIRES pthread)
-
+idf_component_register(
+SRCS
+    "main.c"
+    "../../main/http_server/http_server.c"
+    "../../main/http_server/theme_api.c"
+    "../../main/nvs_config.c"
+INCLUDE_DIRS
+    "."
+    "../../main/http_server/"
+    "../../main/"
+PRIV_REQUIRES
+    pthread
+    esp_http_server
+    esp_timer
+    spiffs
+    nvs_flash
+    json
+)
