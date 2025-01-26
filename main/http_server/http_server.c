@@ -8,7 +8,7 @@
 #include "esp_random.h"
 #include "esp_spiffs.h"
 #include "esp_timer.h"
-#include "esp_wifi.h"
+//#include "esp_wifi.h"
 #include "esp_vfs.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
@@ -24,7 +24,7 @@
 #include "esp_mac.h"
 #include "esp_netif.h"
 #include "esp_ota_ops.h"
-#include "esp_wifi.h"
+//#include "esp_wifi.h"
 #include "lwip/err.h"
 #include "lwip/inet.h"
 #include "lwip/lwip_napt.h"
@@ -488,7 +488,7 @@ static esp_err_t GET_system_info(httpd_req_t * req)
     char * fallbackStratumUser = nvs_config_get_string(NVS_CONFIG_FALLBACK_STRATUM_USER, CONFIG_FALLBACK_STRATUM_USER);
     char * board_version = nvs_config_get_string(NVS_CONFIG_BOARD_VERSION, "unknown");
 
-    esp_wifi_get_mac(WIFI_IF_STA, mac);
+    //esp_wifi_get_mac(WIFI_IF_STA, mac);
     snprintf(formattedMac, 18, "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 
         cJSON * root = cJSON_CreateObject();
