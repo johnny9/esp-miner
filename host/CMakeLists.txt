@@ -1,10 +1,8 @@
-cmake_minimum_required(VERSION 3.16)
-project(esp-miner-host VERSION 0.1)
+cmake_minimum_required(VERSION 3.5)
 
-add_executable(esp-miner
-    main.c
-)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+set(COMPONENTS main)
 
-# If you depend on external libraries (e.g., pthread, etc.):
-# find_package(Threads REQUIRED)
-# target_link_libraries(my_project_host Threads::Threads)
+set(IDF_TARGET "linux")
+
+project(esp-miner-host)
